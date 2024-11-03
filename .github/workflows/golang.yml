@@ -38,4 +38,4 @@ jobs:
           target: devcontainer
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ghcr.io/ruehl/microx-golang-dev:${{ github.ref_name }}
+          tags: ghcr.io/ruehl/microx-generic-containers/golang-dev:${{ github.ref_name }}
