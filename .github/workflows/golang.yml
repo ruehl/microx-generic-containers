@@ -28,10 +28,11 @@ jobs:
           username: ${{github.actor}}
           password: ${{secrets.GITHUB_TOKEN}}
 
-      - name: "Build and push"
+      - name: "Build and push devcontainer"
         uses: docker/build-push-action@v6
         with:
-          file: devcontainers/golang/Dockerfile
+          file: golang/Dockerfile
+          target: devcontainer
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ghcr.io/ruehl/microx-golang-dev:GITHUB_REF_NAME
