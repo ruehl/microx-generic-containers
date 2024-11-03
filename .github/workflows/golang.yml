@@ -34,5 +34,5 @@ jobs:
           file: devcontainers/golang/Dockerfile
           context: devcontainers/golang
           platforms: linux/amd64,linux/arm64
-          push: github.event_name != 'pull_request'
+          push: ${{ github.event_name != 'pull_request' }}
           tags: ghcr.io/ruehl/microx-golang-dev:GITHUB_REF_NAME
